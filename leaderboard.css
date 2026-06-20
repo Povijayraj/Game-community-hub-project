@@ -158,6 +158,10 @@ color:#00E5FF;
     gap:28px;
     grid-template-columns: 1fr;
 }
+ .nav-container{
+justify-content:space-between;
 }
+}
+
 
 
