@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Player Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="Stylesheet" href="profile.css">
+</head>
+
+<body class="min-h-screen bg-neutral-950 text-neutral-100">
+  <!-- Background decor -->
+  <div class="pointer-events-none fixed inset-0 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 h-96 w-[60rem] -translate-x-1/2 rounded-full bg-fuchsia-500/20 blur-3xl">
+    </div>
+    <div class="absolute top-40 -left-20 h-80 w-80 rounded-full bg-sky-500/20 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 h-[32rem] w-[32rem] rounded-full bg-emerald-500/10 blur-3xl"></div>
+  </div>
+
+
+  <!-- Navbar -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">🎮</span>
+            <span>NEXUSHUB</span>
+        </a>
+
+        <nav class="nav-links" id="primary-navigation" aria-label="Primary">
+            <a href="./home/">Home</a>
+            <a href="#">Games</a>
+            <a href="#">Tournaments</a>
+            <a  href="./Leaderboard/leaderboard.html">Leaderboard</a>
+            <a href="#">Community</a>
+            <a class="active" href="#"  aria-current="page">Profile</a>
+        </nav>
+
+        <button class="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+  <main class="relative mx-auto w-full max-w-6xl px-4 py-10">
+    <header class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div class="header">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs">
+          <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400" id="statusDot"></span>
+          <span id="presenceText">Online</span>
+          <span class="text-neutral-400">•</span>
+          <span class="text-neutral-300" id="lastSeenText">Last seen: just now</span>
+        </div>
+        <h1 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl pt-5">Profile</h1>
+        <p class="mt-2 text-neutral-300">Build your legend. Upgrade stats. Earn ranks.</p>
+      </div>
+
+      <div class="flex gap-3">
+        <button id="btnEditProfile"
+          class="rounded-xl bg-white/10 px-4 py-2 text-sm font-semibold hover:bg-white/15 border border-white/10 transition"
+          type="button">
+          Edit Profile
+        </button>
+
+        <button id="btnDoneEdit"
+          class="hidden rounded-xl bg-emerald-500/20 px-4 py-2 text-sm font-semibold hover:bg-emerald-500/30 border border-emerald-400/30 transition"
+          type="button">
+          Done
+        </button>
+      </div>
+    </header>
+
+    <!-- Profile Card -->
+    <section class="mt-8 overflow-hidden rounded-3xl border border-white/10 bg-white/5 glow">
+      <div class="grid grid-cols-1 gap-0 lg:grid-cols-12">
+        <!-- Left: Avatar + Identity -->
+        <div class="lg:col-span-5 p-6 sm:p-8">
+          <div class="flex items-start gap-5">
+            <div class="relative">
+              <div
+                class="h-24 w-24 rounded-3xl bg-gradient-to-br from-white/15 to-white/5 ring-1 ring-white/10 flex items-center justify-center">
+                <!-- Avatar placeholder (JS updates text) -->
+                <span class="text-3xl font-extrabold" id="avatarLetter">A</span>
+              </div>
+
+              <div class="absolute -bottom-2 -right-2 rounded-full bg-emerald-400 p-2 ring-2 ring-neutral-950">
+                <span class="block h-3 w-3 rounded-full bg-neutral-950/80" id="rankIcon"></span>
+              </div>
+            </div>
+
+            <div class="min-w-0">
+              <div class="flex flex-wrap items-center gap-2">
+                <h2 class="text-2xl font-bold tracking-tight" id="playerName">Astra</h2>
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs border border-white/10"
+                  id="playerTag">#A9K</span>
+              </div>
+              <p class="mt-2 text-neutral-300" id="playerBio">A stealthy attacker with a talent for clutch wins.</p>
+
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs" id="mainRole">Role:
+                  Sentinel</span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs" id="clanName">Clan:
+                  Nebula</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick stats -->
+          <div class="mt-7 grid grid-cols-2 gap-3">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <div class="text-xs text-neutral-400">Level</div>
+              <div class="mt-1 text-2xl font-bold" id="levelValue">12</div>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <div class="text-xs text-neutral-400">Leaderboard</div>
+              <div class="mt-1 text-2xl font-bold" id="lbRank">#17</div>
+              <div class="mt-1 text-xs text-neutral-400" id="lbRegion">Top Asia • Solo</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Detailed stats -->
+        <div class="lg:col-span-7 p-6 sm:p-8 border-t border-white/10 lg:border-t-0 lg:border-l">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <h3 class="text-lg font-bold">Competitive Stats</h3>
+            <div class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+              <span class="text-xs text-neutral-400">Matches</span>
+              <span class="font-bold" id="matchesValue">58</span>
+              <span class="text-neutral-400">•</span>
+              <span class="text-xs text-neutral-400">Win rate</span>
+              <span class="font-bold" id="winRateValue">61%</span>
+            </div>
+          </div>
+
+
+          <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <!-- Tournament + Favorite Games -->
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-sm font-semibold">Activity</h3>
+              </div>
+
+              <div class="mt-3 grid grid-cols-2 gap-3">
+                <div class="rounded-xl bg-neutral-950/40 border border-white/10 p-3">
+                  <div class="text-xs text-neutral-400">Tournaments Joined</div>
+                  <div class="mt-1 text-2xl font-bold" id="tournamentsJoined">7</div>
+                </div>
+
+                <div class="rounded-xl bg-neutral-950/40 border border-white/10 p-3">
+                  <div class="text-xs text-neutral-400">Profile Shares</div>
+                  <div class="mt-1 text-2xl font-bold" id="profileShares">12</div>
+                </div>
+
+                <div class="rounded-xl bg-neutral-950/40 border border-white/10 p-3 lg:col-span-2">
+                  <div class="flex items-center justify-between gap-3">
+                    <div>
+                      <div class="text-xs text-neutral-400">Favorite Games</div>
+                      <div class="mt-1 font-semibold" id="favoriteGamesText">Valorant • Apex • CS2</div>
+                    </div>
+                    <button id="btnToggleFavorite"
+                      class="text-xs rounded-lg bg-white/10 border border-white/10 px-3 py-1 hover:bg-white/15 transition"
+                      type="button">Switch</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm font-semibold">Recent Highlights</h3>
+                <button id="btnHighlight"
+                  class="text-xs rounded-lg bg-white/10 border border-white/10 px-3 py-1 hover:bg-white/15 transition">Next</button>
+              </div>
+              <div class="mt-3">
+                <div class="rounded-xl bg-neutral-950/40 border border-white/10 p-3">
+                  <div class="text-xs text-neutral-400">Match</div>
+                  <div class="mt-1 font-semibold" id="hlMatch">#1427</div>
+                  <div class="mt-1 text-neutral-300" id="hlText">No-scope headshots and a clutch retake.</div>
+                  <div class="mt-2 flex flex-wrap gap-2">
+                    <span class="text-xs rounded-full border border-white/10 bg-white/5 px-2 py-1"
+                      id="hlTag1">MVP</span>
+                    <span class="text-xs rounded-full border border-white/10 bg-white/5 px-2 py-1"
+                      id="hlTag2">+SR</span>
+                    <span class="text-xs rounded-full border border-white/10 bg-white/5 px-2 py-1"
+                      id="hlTag3">Streak</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <footer
+            class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-neutral-400">
+            <p id="saveHint" class="hidden">Saved!</p>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+      <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+      <div class="relative mx-auto mt-16 w-full max-w-lg rounded-2xl border border-white/10 bg-neutral-900/90 p-5">
+        <div class="flex items-center justify-between gap-3">
+          <h3 class="text-lg font-bold">Edit Profile</h3>
+          <button id="btnCloseEdit"
+            class="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-sm hover:bg-white/10 transition"
+            type="button">
+            Close
+          </button>
+        </div>
+
+        <form id="editProfileForm" class="mt-4 flex flex-col gap-3">
+          <div class="flex flex-col gap-1">
+            <label class="text-xs text-neutral-400" for="editPlayerName">Option name</label>
+            <input id="editPlayerName"
+              class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 outline-none focus:border-emerald-400/40"
+              type="text" maxlength="30" />
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-xs text-neutral-400" for="editPlayerTag">Player tag</label>
+            <input id="editPlayerTag"
+              class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 outline-none focus:border-emerald-400/40"
+              type="text" maxlength="10" />
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-xs text-neutral-400" for="editRole">Role</label>
+            <input id="editRole"
+              class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 outline-none focus:border-emerald-400/40"
+              type="text" maxlength="30" />
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-xs text-neutral-400" for="editClan">Clan</label>
+            <input id="editClan"
+              class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 outline-none focus:border-emerald-400/40"
+              type="text" maxlength="30" />
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-xs text-neutral-400" for="editBio">Player bio</label>
+            <textarea id="editBio"
+              class="min-h-[92px] resize-none rounded-xl border border-white/10 bg-white/5 px-3 py-2 outline-none focus:border-emerald-400/40"
+              maxlength="120"></textarea>
+          </div>
+
+          <div class="mt-2 flex items-center justify-end gap-2">
+            <button id="btnCancelEdit"
+              class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition"
+              type="button">
+              Cancel
+            </button>
+            <button id="btnSaveEdit"
+              class="rounded-xl bg-emerald-500/20 px-4 py-2 text-sm font-semibold hover:bg-emerald-500/30 border border-emerald-400/30 transition"
+              type="submit">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- footer  -->
+    <footer id="footer">
+
+      <div class="container footer-grid p-10">
+
+        <div>
+
+          <h3>NEXUSHUB</h3>
+
+          <p>
+            The ultimate gaming platform for players, creators and esports enthusiasts.
+          </p>
+
+        </div>
+
+        <div>
+
+          <h4>Platform</h4>
+
+          <a href="#">Games</a>
+          <a href="#">Tournaments</a>
+          <a href="#">Leaderboard</a>
+
+        </div>
+
+        <div>
+
+          <h4>Community</h4>
+
+          <a href="#">Forum</a>
+          <a href="#">Discord</a>
+          <a href="#">Events</a>
+
+        </div>
+
+        <div>
+
+          <h4>Support</h4>
+
+          <a href="#">Contact</a>
+          <a href="#">FAQ</a>
+          <a href="#">Privacy Policy</a>
+
+        </div>
+
+      </div>
+
+    </footer>
+    <script src="profilepage.js"></script>
+</body>
+
+</html>
