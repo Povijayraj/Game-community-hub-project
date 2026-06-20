@@ -1,0 +1,163 @@
+ .glass {
+      background: rgba(17, 24, 39, 0.65);
+      backdrop-filter: blur(10px);
+    }
+
+
+
+
+.navbar{
+position:fixed;
+width:100%;
+height:80px;
+z-index:1000;
+backdrop-filter:blur(18px);
+background:rgba(2,4,10,.9);
+border-bottom:1px solid rgba(255,255,255,.04);
+transition:background .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.navbar.is-scrolled{
+background:rgba(2,4,10,.98);
+border-bottom-color:rgba(255,255,255,.08);
+box-shadow:0 10px 30px rgba(0,0,0,.22);
+}
+
+.nav-container{
+position:relative;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-family:'Orbitron',sans-serif;
+font-weight:700;
+}
+
+.logo-icon{
+color:var(--cyan);
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:34px;
+}
+
+.nav-links a{
+color:#c6d0e1;
+transition:.25s ease;
+font-size:.95rem;
+}
+
+.nav-links a:hover, .nav-links .active{
+color:#00E5FF;
+}
+
+.mobile-menu{
+display:none;
+border:none;
+background:none;
+color:#fff;
+font-size:1.4rem;
+padding:8px;
+border-radius:12px;
+}
+
+.header h1{
+ font-family:'Orbitron',sans-serif;
+}
+
+
+
+footer{
+padding:88px 0;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+gap:40px;
+}
+
+.footer-grid h3{
+font-family:'Orbitron',sans-serif;
+margin-bottom:16px;
+}
+
+.footer-grid h4{
+margin-bottom:18px;
+font-weight: bold;
+}
+
+.footer-grid p{
+color:var(--muted);
+line-height:1.8;
+}
+
+.footer-grid a{
+display:block;
+color:#c7d0df;
+margin-bottom:12px;
+transition:.25s ease;
+}
+
+.footer-grid a:hover{
+color:#00E5FF;
+}
+
+
+
+
+
+
+@media (max-width:1200px){
+.footer-grid{
+    grid-template-columns:1fr 1fr;
+}
+}
+
+
+
+
+
+@media (max-width:768px){
+
+    
+.nav-links{
+    display:none;
+    position:absolute;
+    top:calc(100% + 12px);
+    right:0;
+    left:0;
+    padding:18px;
+    border-radius:20px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+    background:rgba(3,7,14,.98);
+    border:1px solid rgba(255,255,255,.06);
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+
+.nav-links.is-open{
+    display:flex;
+}
+
+.mobile-menu{
+    display:block;
+}
+
+.footer-grid{
+    gap:28px;
+    grid-template-columns: 1fr;
+}
+}
+
+
