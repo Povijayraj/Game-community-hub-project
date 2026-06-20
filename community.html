@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="community.css">
+</head>
+
+<body>
+
+
+
+    <section class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">🎮</span>
+                <span>NEXUSHUB</span>
+            </a>
+
+            <nav class="nav-links" id="primary-navigation" aria-label="Primary">
+                <a href="#">Home</a>
+                <a href="#">Games</a>
+                <a href="#">Tournaments</a>
+                <a href="./Leaderboard/leaderboard.html">Leaderboard</a>
+                <a class="active" href="community.html" aria-current="page">Community</a>
+                <a href="#">Profile</a>
+            </nav>
+
+            <button class="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="primary-navigation">
+                ☰
+            </button>
+
+        </div>
+
+    </section>
+
+    <div class="container-one">
+        <div class="top-bar items-start">
+            <div>
+                <h1>Community Forum</h1>
+                <p>Join the conversation</p>
+                <div class="line"></div>
+            </div>
+            <div> <button class="new-post" id="myBtn">
+                    + NEW POST
+                </button>
+            </div>
+
+
+
+            <style>
+
+            </style>
+
+            <div id="myModal" class="modal-overlay">
+
+                <!-- Modal content -->
+
+
+                <div class="items-center justify-center">
+
+
+                    <div class="modal-box">
+                        <span class="close">&times;</span>
+
+
+                        <h2>Create New Post</h2>
+
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select>
+                                <option>General</option>
+                                <option>Esports</option>
+                                <option>Tournaments</option>
+                                <option>Tips & Tricks</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" placeholder="What's on your mind?">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Content</label>
+                            <textarea placeholder="Share your thoughts..."></textarea>
+                        </div>
+
+                        <button class="submitBtn">
+                            <i class="fa-regular fa-paper-plane"></i> POST DISCUSSION
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search discussions...">
+        </div>
+
+        <div class="tab-categories">
+            <button class="tablinks" onclick="openTab(event, 'all')">ALL</button>
+            <button class="tablinks" onclick="openTab(event, 'general')">GENERAL</button>
+            <button class="tablinks" onclick="openTab(event, 'esports')">ESPORTS</button>
+            <button class="tablinks" onclick="openTab(event, 'tournaments')">TOURNAMENTS</button>
+            <button class="tablinks" onclick="openTab(event, 'tips')">TIPS & TRICKS</button>
+        </div>
+
+        <!-- All Categories Content-->
+
+        <div id="all" class="tabcontent">
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="avatar">🎯</div>
+                        <div class="user-info">
+                            <h3>PhantomX</h3><span>.2h ago</span>
+                        </div>
+                    </div>
+
+                    <span class="tag tips">TIPS & TRICKS</span>
+                </div>
+
+                <h2>Best loadout for Nexus Warfare Season 5?</h2>
+
+                <p>
+                    I've been experimenting with the new Phantom rifle and it seems
+                    insanely strong. What are your thoughts on the current meta?
+                    Also, the new map 'Obsidian Citadel' is absolutely stunning.
+                </p>
+
+                <div class="actions">
+                    <span><i class="fa-regular fa-heart"></i> 142</span>
+                    <span><i class="fa-regular fa-comment"></i> 38</span>
+                    <span><i class="fa-solid fa-share-nodes"></i> Share</span>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="avatar">🐍</div>
+                        <div class="user-info">
+                            <h3>CyberViper</h3>
+                            <span>.30m ago</span>
+                        </div>
+                    </div>
+
+                    <span class="tag esports">ESPORTS</span>
+                </div>
+
+                <h2>Apex Masters Invitational — Live Discussion Thread</h2>
+
+                <p>
+                    The semi-finals are underway! Nova Esports vs Eclipse Gaming is looking absolutely insane. That 1v3
+                    clutch by CyberViper was legendary. Who's taking the trophy?
+                </p>
+
+                <div class="actions">
+                    <span><i class="fa-regular fa-heart"></i> 189</span>
+                    <span><i class="fa-regular fa-comment"></i> 156</span>
+                    <span><i class="fa-solid fa-share-nodes"></i> Share</span>
+                </div>
+            </div>
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="avatar">🔥</div>
+                        <div class="user-info">
+                            <h3>BlazeFury</h3>
+                            <span>.4h ago</span>
+                        </div>
+                    </div>
+
+                    <span class="tag esports">GENERAL</span>
+                </div>
+                <h2>Looking for teammates — Diamond+ ranked grind</h2>
+
+                <p>
+                    Need 2 more players for ranked grind in Apex Dominion. Must be Diamond or above, have mic, and be
+                    available weekday evenings EST. DM me your stats!
+                </p>
+
+                <div class="actions">
+                    <span><i class="fa-regular fa-heart"></i> 45</span>
+                    <span><i class="fa-regular fa-comment"></i> 22</span>
+                    <span><i class="fa-solid fa-share-nodes"></i> Share</span>
+                </div>
+            </div>
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="avatar">⚡</div>
+                        <div class="user-info">
+                            <h3>ShadowStrike</h3>
+                            <span>.6h ago</span>
+                        </div>
+                    </div>
+
+                    <span class="tag esports">TOURNAMENTS</span>
+                </div>
+
+                <h2>New tournament format feedback</h2>
+
+                <p>
+                    The double elimination bracket format is much better than last season's Swiss format. Games feel
+                    more intense and every match matters. Great job by the organizers!
+                </p>
+
+                <div class="actions">
+                    <span><i class="fa-regular fa-heart"></i>87</span>
+                    <span><i class="fa-regular fa-comment"></i> 41</span>
+                    <span><i class="fa-solid fa-share-nodes"></i> Share</span>
+                </div>
+            </div>
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="avatar">⚔️</div>
+                        <div class="user-info">
+                            <h3>NeonBlade</h3>
+                            <span>.1h ago</span>
+                        </div>
+                    </div>
+                    <span class="tag esports">TIPS & TRICKS</span>
+                </div>
+                <h2>Ethereal Realms — Hidden boss locations guide</h2>
+
+                <p>
+                    Found all 12 hidden bosses in the new Shadowlands expansion. Here's a complete guide with
+                    coordinates, recommended gear levels, and strategy tips for each encounter.
+                </p>
+
+                <div class="actions">
+                    <span><i class="fa-regular fa-heart"></i> 234</span>
+                    <span><i class="fa-regular fa-comment"></i> 67</span>
+                    <span><i class="fa-solid fa-share-nodes"></i> Share</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- General Categories Content-->
+
+        <div id="general" class="tabcontent" style="margin-top: 40px;">
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="avatar">🔥</div>
+                        <div class="user-info">
+                            <h3>BlazeFury</h3>
+                            <span>.4h ago</span>
+                        </div>
+                    </div>
+
+                    <span class="tag esports">GENERAL</span>
+                </div>
+                <h2>Looking for teammates — Diamond+ ranked grind</h2>
+
+                <p>
+                    Need 2 more players for ranked grind in Apex Dominion. Must be Diamond or above, have mic, and be
+                    available weekday evenings EST. DM me your stats!
+                </p>
+
+                <div class="actions">
+                    <span><i class="fa-regular fa-heart"></i> 45</span>
+                    <span><i class="fa-regular fa-comment"></i> 22</span>
+                    <span><i class="fa-solid fa-share-nodes"></i> Share</span>
+                </div>
+            </div>
+        </div>
+        <!-- Esports Categories Content-->
+
+        <div id="esports" class="tabcontent" style="margin-top: 40px;">
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="avatar">🐍</div>
+                        <div class="user-info">
+                            <h3>CyberViper</h3>
+                            <span>.30m ago</span>
+                        </div>
+                    </div>
+
+                    <span class="tag esports">ESPORTS</span>
+                </div>
+
+                <h2>Apex Masters Invitational — Live Discussion Thread</h2>
+
+                <p>
+                    The semi-finals are underway! Nova Esports vs Eclipse Gaming is looking absolutely insane. That 1v3
+                    clutch by CyberViper was legendary. Who's taking the trophy?
+                </p>
+
+                <div class="actions">
+                    <span><i class="fa-regular fa-heart"></i> 189</span>
+                    <span><i class="fa-regular fa-comment"></i> 156</span>
+                    <span><i class="fa-solid fa-share-nodes"></i> Share</span>
+                </div>
+            </div>
+
+        </div>
+        <!-- Tournaments Categories Content-->
+
+        <div id="tournaments" class="tabcontent" style="margin-top: 40px;">
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="avatar">⚡</div>
+                        <div class="user-info">
+                            <h3>ShadowStrike</h3>
+                            <span>.6h ago</span>
+                        </div>
+                    </div>
+
+                    <span class="tag esports">TOURNAMENTS</span>
+                </div>
+
+                <h2>New tournament format feedback</h2>
+
+                <p>
+                    The double elimination bracket format is much better than last season's Swiss format. Games feel
+                    more intense and every match matters. Great job by the organizers!
+                </p>
+
+                <div class="actions">
+                    <span><i class="fa-regular fa-heart"></i>87</span>
+                    <span><i class="fa-regular fa-comment"></i> 41</span>
+                    <span><i class="fa-solid fa-share-nodes"></i> Share</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tips & Tricks Categories Content-->
+
+        <div id="tips" class="tabcontent" style="margin-top: 40px;">
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="avatar">🎯</div>
+                        <div class="user-info">
+                            <h3>PhantomX</h3>
+                            <span>.2h ago</span>
+                        </div>
+                    </div>
+
+                    <span class="tag tips">TIPS & TRICKS</span>
+                </div>
+
+                <h2>Best loadout for Nexus Warfare Season 5?</h2>
+
+                <p>
+                    I've been experimenting with the new Phantom rifle and it seems
+                    insanely strong. What are your thoughts on the current meta?
+                    Also, the new map 'Obsidian Citadel' is absolutely stunning.
+                </p>
+
+                <div class="actions">
+                    <span><i class="fa-regular fa-heart"></i> 142</span>
+                    <span><i class="fa-regular fa-comment"></i> 38</span>
+                    <span><i class="fa-solid fa-share-nodes"></i> Share</span>
+                </div>
+            </div>
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="avatar">⚔️</div>
+                        <div class="user-info">
+                            <h3>NeonBlade</h3>
+                            <span>.1h ago</span>
+                        </div>
+                    </div>
+
+                    <span class="tag tips">TIPS & TRICKS</span>
+                </div>
+                <h2>Ethereal Realms — Hidden boss locations guide</h2>
+
+                <p>
+                    Found all 12 hidden bosses in the new Shadowlands expansion. Here's a complete guide with
+                    coordinates, recommended gear levels, and strategy tips for each encounter.
+                </p>
+
+                <div class="actions">
+                    <span><i class="fa-regular fa-heart"></i> 234</span>
+                    <span><i class="fa-regular fa-comment"></i> 67</span>
+                    <span><i class="fa-solid fa-share-nodes"></i> Share</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <h3>NEXUSHUB</h3>
+
+                <p>
+                    The ultimate gaming platform for players, creators and esports enthusiasts.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>Platform</h4>
+
+                <a href="#">Games</a>
+                <a href="#">Tournaments</a>
+                <a href="#">Leaderboard</a>
+
+            </div>
+
+            <div>
+
+                <h4>Community</h4>
+
+                <a href="#">Forum</a>
+                <a href="#">Discord</a>
+                <a href="#">Events</a>
+
+            </div>
+
+            <div>
+
+                <h4>Support</h4>
+
+                <a href="#">Contact</a>
+                <a href="#">FAQ</a>
+                <a href="#">Privacy Policy</a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="./community.js"></script>
+</body>
+
+</html>
