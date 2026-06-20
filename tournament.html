@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Tournament Schedule</title>
+  <link rel="stylesheet" href="tournament.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  
+  <!-- Navbar -->
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">🎮</span>
+            <span>NEXUSHUB</span>
+        </a>
+
+        <nav class="nav-links" id="primary-navigation" aria-label="Primary">
+            <a href="#">Home</a>
+            <a href="#">Games</a>
+            <a href="#" class="active" aria-current="page">Tournaments</a>
+            <a href="#">Leaderboard</a>
+            <a href="#">Community</a>
+            <a href="#">Profile</a>
+        </nav>
+
+        <button class="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+  <div class="head">
+        <h1 class="text-3xl font-extrabold  sm:text-4xl pt-20">Tournament</h1>
+        <p class="mt-2 text-slate-300">Choose Your Own Tournment</p>
+      </div>
+ 
+
+  
+    <div class="cards">
+      <div class="card1">
+        <img  class="image1" src="./images/image1.webp" alt="hello">
+        <span class="status2">OPEN</span>
+        <div class="padding">
+        <h2>Nexus World Championship</h2>
+        <p>📅Jun 25, 2026</p>
+        <p>🏆 $500,000</p>
+        <p>👥24/32 teams</p>
+        </div>
+<!-- Card 1 -->
+<div class="timer" data-date="June 25, 2026 00:00:00">
+  <div class="box"><span class="days">00</span><small>D</small></div>
+  <div class="box"><span class="hours">00</span><small>H</small></div>
+  <div class="box"><span class="minutes">00</span><small>M</small></div>
+  <div class="box"><span class="seconds">00</span><small>S</small></div>
+</div>
+
+
+  <button class="btn" onclick="openForm()">REGISTER NOW</button>
+  
+
+      </div>
+      <div class="card7">
+        <img  class="image1" src="./images/image2.webp" alt="hello">
+        <span class="status3">LIVE</span>
+        <div class="padding">
+        <h2>Street Star Tournament</h2>
+        <p>📅Jun 15, 2026</p>
+        <p>🏆 $400,000</p>
+        <p>👥20/20 teams</p>
+        </div>
+      
+  
+
+  <button class="btn2">WATCH LIVE</button>
+
+      </div>
+      <div class="card1">
+        <img  class="image1" src="./images/image4.jpeg" alt="hello">
+        <span class="status2">OPEN</span>
+        <div class="padding">
+        <h2>Free Fire Tournament</h2>
+        <p>📅Jun 31, 2026</p>
+        <p>🏆 $5,000</p>
+        <p>👥34/40 teams</p>
+        </div>
+      <div class="timer" data-date="June 31, 2026 00:00:00">
+  <div class="box"><span class="days">00</span><small>D</small></div>
+  <div class="box"><span class="hours">00</span><small>H</small></div>
+  <div class="box"><span class="minutes">00</span><small>M</small></div>
+  <div class="box"><span class="seconds">00</span><small>S</small></div>
+</div>
+  <button class="btn">REGISTER NOW</button>
+</div>
+
+  
+      <div class="card1">
+        <img  class="image1" src="./images/image6.jpg" alt="hello">
+        <span class="status2">OPEN</span>
+        <div class="padding">
+        <h2>PUBG Tournament</h2>
+        <p>📅Aug 30, 2026</p>
+        <p>🏆 $10,000</p>
+        <p>👥12/32 teams</p>
+        </div>
+ <div class="timer" data-date="Augest 31, 2026 00:00:00">
+  <div class="box"><span class="days">00</span><small>D</small></div>
+  <div class="box"><span class="hours">00</span><small>H</small></div>
+  <div class="box"><span class="minutes">00</span><small>M</small></div>
+  <div class="box"><span class="seconds">00</span><small>S</small></div>
+</div>
+
+  <button class="btn">REGISTER NOW</button>
+
+      </div>
+    </div>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <h2>Register for Tournaments</h2>
+          
+        </div>
+        <button class="close-btn" id="closeBtn">×</button>
+      </div>
+
+      <form class="tournament-form" id="tournamentForm" novalidate>
+        <div class="form-group">
+          <label for="teamName">Team Name</label>
+          <input type="text" id="teamName" placeholder="Enter team name">
+          <span class="error-msg">Team name required</span>
+        </div>
+
+        <div class="form-group">
+          <label for="captain">Team Captain</label>
+          <input type="text" id="captain" placeholder="Captain's gamertag">
+          <span class="error-msg">Captain name required</span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Contact Email</label>
+          <input type="email" id="email" placeholder="team@email.com">
+          <span class="error-msg">Valid email required</span>
+        </div>
+
+        <div class="form-group">
+          <label for="members">Team Members</label>
+          <input type="text" id="members" placeholder="Comma-separated gamertags">
+          <span class="error-msg">Team members required</span>
+        </div>
+
+        <button type="submit" class="submit-btn">CONFIRM REGISTRATION</button>
+      </form>
+    </div>
+  </div>
+  <!-- Success Popup -->
+<div id="successPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:linear-gradient(135deg,#0a1628,#0d2137); border:2px solid #00f7ff; border-radius:20px; padding:50px; text-align:center; color:white; max-width:400px;">
+    <div style="font-size:60px;">🏆</div>
+    <h2 style="color:#00f7ff; margin:15px 0;">Registration Complete!</h2>
+    <p style="color:#aaa;">You have successfully registered for the tournament.<br>Good luck!</p>
+    <div id="countdown" style="margin-top:20px; color:#00f7ff; font-size:14px;">Closing in 10 seconds...</div>
+  </div>
+</div>
+
+  
+
+<div class="Tourcontainer">
+  <h2 class="titles  font-bold whitespace-nowrap p-3 ml-10">Tournament Schedule</h2>
+
+  <div class="match-list">
+
+    <div class="match">
+      <span class="time">14:00 UTC</span>
+      <span class="teams">Nova vs Dark Matter</span>
+      <span class="status completed">COMPLETED</span>
+    </div>
+
+    <div class="match">
+      <span class="time">15:30 UTC</span>
+      <span class="teams">Eclipse vs Neon Wolves</span>
+      <span class="status completed">COMPLETED</span>
+    </div>
+
+    <div class="match">
+      <span class="time">17:00 UTC</span>
+      <span class="teams">Titan vs Arctic Storm</span>
+      <span class="status completed">COMPLETED</span>
+    </div>
+
+    <div class="match">
+      <span class="time">18:30 UTC</span>
+      <span class="teams">Vortex vs Pixel Army</span>
+      <span class="status completed">COMPLETED</span>
+    </div>
+
+    <div class="match highlight">
+      <span class="time">20:00 UTC</span>
+      <span class="teams">Nova vs Eclipse</span>
+      <span class="status live">LIVE</span>
+    </div>
+
+    <div class="match">
+      <span class="time">21:30 UTC</span>
+      <span class="teams">Arctic vs Vortex</span>
+      <span class="status upcoming">UPCOMING</span>
+    </div>
+
+    <div class="match">
+      <span class="time">23:00 UTC</span>
+      <span class="teams">Grand Final</span>
+      <span class="status upcoming">UPCOMING</span>
+    </div>
+
+  </div>
+</div>
+
+
+
+<h2 class="title">Tournament Bracket</h2>
+
+<div class="bracket">
+
+  <!-- Quarterfinals -->
+  <div class="round">
+    <h3 class="tag">QUARTERFINALS</h3>
+
+    <div class="match1">
+      <p>Nova Esports <span>2</span></p>
+      <p>Dark Matter <span>1</span></p>
+    </div>
+
+    <div class="match1">
+      <p>Eclipse Gaming <span>2</span></p>
+      <p>Neon Wolves <span>0</span></p>
+    </div>
+
+    <div class="match1">
+      <p>Titan Squad <span>1</span></p>
+      <p>Arctic Storm <span>2</span></p>
+    </div>
+
+    <div class="match1">
+      <p>Vortex Elite <span>2</span></p>
+      <p>Pixel Army <span>1</span></p>
+    </div>
+  </div>
+
+  <!-- Semifinals -->
+  <div class="round">
+    <h3 class="tag">SEMIFINALS</h3>
+
+    <div class="match center">
+      <p>Nova Esports <span>2</span></p>
+      <p>vs</p>
+      <p>Eclipse Gaming <span>1</span></p>
+    </div>
+
+    <div class="match center">
+      <p>Arctic Storm <span>0</span></p>
+      <p>vs</p>
+      <p>Vortex Elite <span>2</span></p>
+    </div>
+  </div>
+
+  <!-- Final -->
+  <div class="round">
+    <h3 class="tag">GRAND FINAL</h3>
+
+    <div class="match final">
+      
+      <p>Nova Esports</p>
+      <p>vs</p>
+      <p>Vortex Elite</p>
+     
+    </div>
+  </div>
+
+</div>
+<!-- Live Score Dashboard -->
+<div id="liveDashboard" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#050d1a; z-index:9999; overflow-y:auto;">
+  
+  <!-- Header -->
+  <div style="background:#0a1628; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #00f7ff;">
+    <div>
+      <span style="background:red; color:white; padding:4px 10px; border-radius:5px; font-weight:bold; margin-right:10px;">🔴 LIVE</span>
+      <span style="color:#00f7ff; font-size:20px; font-weight:bold;">Street Star Tournament</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:20px;">
+      <span style="color:#aaa;">👁 <span id="viewerCount">0</span> Watching</span>
+      <button onclick="closeDashboard()" style="background:#ff3333; color:white; border:none; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:bold;">✕ Close</button>
+    </div>
+  </div>
+
+  <!-- Main Score Board -->
+  <div style="padding:30px; max-width:900px; margin:0 auto;">
+    
+    <!-- Match Score -->
+    <div style="background:#0a1628; border:1px solid #00f7ff33; border-radius:15px; padding:30px; text-align:center; margin-bottom:20px;">
+      <p style="color:#aaa; margin:0 0 10px;">CURRENT MATCH</p>
+      <div style="display:flex; justify-content:center; align-items:center; gap:30px;">
+        
+        <!-- Team 1 -->
+        <div style="text-align:center;">
+          <div style="font-size:40px;">⚔️</div>
+          <p style="color:white; font-size:18px; font-weight:bold;">Nova</p>
+          <p id="score1" style="color:#00f7ff; font-size:50px; font-weight:bold;">0</p>
+          <span style="background:#00f7ff22; color:#00f7ff; padding:3px 10px; border-radius:5px; font-size:12px;">KILLS: <span id="kills1">0</span></span>
+        </div>
+
+        <!-- VS -->
+        <div style="color:#ff6600; font-size:30px; font-weight:bold;">VS</div>
+
+        <!-- Team 2 -->
+        <div style="text-align:center;">
+          <div style="font-size:40px;">🛡️</div>
+          <p style="color:white; font-size:18px; font-weight:bold;">Dark Matter</p>
+          <p id="score2" style="color:#ff6600; font-size:50px; font-weight:bold;">0</p>
+          <span style="background:#ff660022; color:#ff6600; padding:3px 10px; border-radius:5px; font-size:12px;">KILLS: <span id="kills2">0</span></span>
+        </div>
+
+      </div>
+
+      <!-- Match Timer -->
+      <div style="margin-top:20px;">
+        <p style="color:#aaa; font-size:13px;">MATCH TIME</p>
+        <p id="matchTime" style="color:white; font-size:24px; font-weight:bold;">00:00</p>
+      </div>
+    </div>
+
+    <!-- Live Leaderboard -->
+    <div style="background:#0a1628; border:1px solid #00f7ff33; border-radius:15px; padding:20px; margin-bottom:20px;">
+      <h3 style="color:#00f7ff; margin:0 0 15px;">🏆 Live Leaderboard</h3>
+      <table style="width:100%; border-collapse:collapse; color:white;">
+        <thead>
+          <tr style="border-bottom:1px solid #00f7ff33; color:#aaa; font-size:13px;">
+            <td style="padding:8px;">#</td>
+            <td style="padding:8px;">Team</td>
+            <td style="padding:8px;">Kills</td>
+            <td style="padding:8px;">Points</td>
+            <td style="padding:8px;">Status</td>
+          </tr>
+        </thead>
+        <tbody id="leaderboard"></tbody>
+      </table>
+    </div>
+
+    <!-- Live Feed -->
+    <div style="background:#0a1628; border:1px solid #00f7ff33; border-radius:15px; padding:20px;">
+      <h3 style="color:#00f7ff; margin:0 0 15px;">⚡ Live Feed</h3>
+      <div id="liveFeed" style="max-height:200px; overflow-y:auto; display:flex; flex-direction:column; gap:8px;"></div>
+    </div>
+
+  </div>
+</div>
+<!-- footer  -->
+  <footer>
+
+    <div class="container footer-grid p-10">
+
+        <div>
+
+            <h3>NEXUSHUB</h3>
+
+            <p>
+                The ultimate gaming platform for players, creators and esports enthusiasts.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>Platform</h4>
+
+            <a href="#">Games</a>
+            <a href="#">Tournaments</a>
+            <a href="#">Leaderboard</a>
+
+        </div>
+
+        <div>
+
+            <h4>Community</h4>
+
+            <a href="#">Forum</a>
+            <a href="#">Discord</a>
+            <a href="#">Events</a>
+
+        </div>
+
+        <div>
+
+            <h4>Support</h4>
+
+            <a href="#">Contact</a>
+            <a href="#">FAQ</a>
+            <a href="#">Privacy Policy</a>
+
+        </div>
+
+    </div>
+
+</footer>
+ 
+</body>
+<script src="tournament.js"></script>
+</html>
+
+
+
